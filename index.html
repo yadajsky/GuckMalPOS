@@ -729,9 +729,127 @@ const BRAND_META = {
   }
 };
 
+// ==================== KITCHEN PREPARATION & COOKING SPECIFICATIONS (GUCK MAL PREP) ====================
+const MENU_PREP_SPECS = {
+  'Guck mal! Crispy Thigh': {
+    brand: 'chicken',
+    pieces: 'สะโพกไก่กรอบ 1 ชิ้น',
+    shortPortion: 'สะโพก 1 ชิ้น',
+    temp: '200°C',
+    time: '16 นาที',
+    instruction: 'หม้อทอด 200°C ทอด 16 นาที'
+  },
+  'Guck mal! Boneless Bites': {
+    brand: 'chicken',
+    pieces: 'ชังกี้ไบท์ 7 ชิ้น',
+    shortPortion: 'ชังกี้ไบท์ 7 ชิ้น',
+    temp: '200°C',
+    time: '8 นาที',
+    instruction: 'หม้อทอด 200°C ทอด 8 นาที'
+  },
+  'Guck mal! Wedge Fries': {
+    brand: 'chicken',
+    pieces: 'Wedge Fries 100g',
+    shortPortion: '100g',
+    temp: '200°C',
+    time: '12 นาที',
+    instruction: 'หม้อทอด 200°C ทอด 12 นาที'
+  },
+  'Guck mal! Chicken Pop': {
+    brand: 'chicken',
+    pieces: 'ไก่ป๊อบ 8 ชิ้น',
+    shortPortion: 'ไก่ป๊อบ 8 ชิ้น',
+    temp: '200°C',
+    time: '6 นาที',
+    instruction: 'หม้อทอด 200°C ทอด 6 นาที'
+  },
+  'Guck mal! Chicken Nuggets': {
+    brand: 'chicken',
+    pieces: 'นักเก็ต 6 ชิ้น',
+    shortPortion: 'นักเก็ต 6 ชิ้น',
+    temp: '200°C',
+    time: '12 นาที',
+    instruction: 'หม้อทอด 200°C ทอด 12 นาที'
+  },
+  'Guck mal! Crispy Sticks': {
+    brand: 'chicken',
+    pieces: 'ชิกกี้สติก 7 ชิ้น',
+    shortPortion: 'ชิกกี้สติก 7 ชิ้น',
+    temp: '200°C',
+    time: '6 นาที',
+    instruction: 'หม้อทอด 200°C ทอด 6 นาที'
+  },
+  'Guck mal! Thighny Sticks': {
+    brand: 'chicken',
+    pieces: 'สะโพกไก่กรอบ 1 ชิ้น + ชิกกี้สติก 6 ชิ้น',
+    shortPortion: 'สะโพก 1 + สติก 6',
+    temp: '200°C',
+    time: '16 นาที',
+    instruction: 'หม้อทอด 200°C 16 นาที (ผ่านไป 1.5 นาทีเอา stick ออก)'
+  },
+  'Guck mal! Thighny Bites': {
+    brand: 'chicken',
+    pieces: 'สะโพกไก่กรอบ 1 ชิ้น + ชังกี้ไบท์ 7 ชิ้น',
+    shortPortion: 'สะโพก 1 + ชังกี้ 7',
+    temp: '200°C',
+    time: '16 นาที',
+    instruction: 'หม้อทอด 200°C 16 นาที (ผ่านไป 1.5 นาทีเอา ชังกี้ไบท์ ออก)'
+  },
+  'Guck mal! Duo Snacks': {
+    brand: 'chicken',
+    pieces: 'ไก่ป๊อบ 8 ชิ้น + นักเก็ต 5 ชิ้น',
+    shortPortion: 'ป๊อบ 8 + นักเก็ต 5',
+    temp: '200°C',
+    time: '7 นาที',
+    instruction: 'หม้อทอด 200°C 7 นาที (เอาป๊อบออกตอนเหลือ 1 นาที)'
+  },
+  'Guck mal! Happy Trio': {
+    brand: 'chicken',
+    pieces: 'สะโพกไก่กรอบ 1 ชิ้น + ชังกี้ไบท์ 7 ชิ้น + นักเก็ต 5 ชิ้น',
+    shortPortion: 'สะโพก 1 + ชังกี้ 7 + นักเก็ต 5',
+    temp: '200°C',
+    time: '16 นาที',
+    instruction: 'หม้อทอด 200°C 16 นาที (ผ่านไป 1.5 นาทีเอา ชังกี้ไบท์ ออก ผ่านไป 1.5 นาทีเอา นักเก็ต ออก)'
+  },
+  'Guck mal! Party Trio': {
+    brand: 'chicken',
+    pieces: 'ชังกี้ไบท์ 7 ชิ้น + ไก่ป๊อบ 7 ชิ้น + ชิกกี้สติก 6 ชิ้น',
+    shortPortion: 'ชังกี้ 7 + ป๊อบ 7 + สติก 6',
+    temp: '200°C',
+    time: '6 นาที',
+    instruction: 'หม้อทอด 200°C ทอด 6 นาที'
+  },
+  'Rice': {
+    brand: 'chicken',
+    pieces: 'ข้าวสวย 150g',
+    shortPortion: '150g',
+    temp: '-',
+    time: '-',
+    instruction: 'ตักใส่กล่องพร้อมเสิร์ฟ'
+  },
+  'Cheesecake 10 cm': {
+    brand: 'cheesecake',
+    pieces: 'เค้ก 1 ก้อน (10 ซม.)',
+    shortPortion: '1 ก้อน (10 cm)',
+    temp: 'แช่เย็น',
+    time: '-',
+    instruction: 'บรรจุกล่องกลมพร้อมช้อน 2 คัน'
+  },
+  'Biscoff topping': {
+    brand: 'cheesecake',
+    pieces: 'Biscoff 1 แท่ง (23.4g)',
+    shortPortion: '1 แท่ง',
+    temp: '-',
+    time: '-',
+    instruction: 'บรรจุกระปุกบิสคอฟ'
+  }
+};
+
 const DEFAULT_SETTINGS = {
   gp: 0.321,
-  bundle: 0.25,
+  bundle: 0.17,
+  bundle_2: 0.17,
+  bundle_3: 0.15,
   tartar_in: 10,
   tartar_dl: 15,
   preheat: 3,
@@ -1020,7 +1138,7 @@ let brand = 'chicken';
 let menuCatFilter = 'all';
 let menuSearch = '';
 let cart = [];
-let ch = 'In-store';
+let ch = null;
 let disc = 0;
 let extra = 0;
 let cust = null;
@@ -1074,11 +1192,12 @@ const matchCh = (c1, c2) => {
   return normCh(c1) === normCh(c2);
 };
 const isInStore = (channel = ch) => {
+  if (!channel) return true;
   const n = normCh(channel);
   return n === 'instore' || n === 'walkin' || n === 'dinein' || n === 'takeaway';
 };
-const isDel = (channel = ch) => !isInStore(channel);
-const pf = m => isInStore(ch) ? m.inn : (matchCh(ch, 'Shopee') && m.sp ? m.sp : m.dl);
+const isDel = (channel = ch) => channel ? !isInStore(channel) : false;
+const pf = m => (!ch || isInStore(ch)) ? m.inn : (matchCh(ch, 'Shopee') && m.sp ? m.sp : m.dl);
 const roundTo9 = v => {
   if (!v || v <= 0) return 0;
   return Math.max(9, Math.round((v - 9) / 10) * 10 + 9);
@@ -1121,6 +1240,109 @@ function getStepsInfo(l) {
     tot,
     txt: 'All in at 0:00 → ' + ev.map(e => `pull <b>${esc(e[0])}</b> at <b>${e[1]}:00</b>`).join(', ')
   };
+}
+
+function parseOrderDateTime(v) {
+  if (!v) return null;
+  const s = String(v).trim();
+  let d = new Date(s);
+  if (isNaN(d.getTime())) {
+    d = new Date(s.replace(' ', 'T'));
+  }
+  if (isNaN(d.getTime())) {
+    const parts = s.split(/[\sT]+/);
+    const dp = (parts[0] || '').split(/[-/]/);
+    const tp = (parts[1] || '00:00:00').split(':');
+    if (dp.length === 3) {
+      if (dp[0].length === 4) {
+        d = new Date(+dp[0], +dp[1] - 1, +dp[2], +tp[0] || 0, +tp[1] || 0, +tp[2] || 0);
+      } else if (dp[2].length === 4) {
+        d = new Date(+dp[2], +dp[1] - 1, +dp[0], +tp[0] || 0, +tp[1] || 0, +tp[2] || 0);
+      }
+    }
+  }
+  if (isNaN(d.getTime())) return null;
+  return {
+    dayOfWeek: d.getDay(), // 0=Sun, 1=Mon, ..., 6=Sat
+    hour: d.getHours(),     // 0..23
+    date: d
+  };
+}
+
+function openPrepGuideModal() {
+  const chickenItems = Object.entries(MENU_PREP_SPECS).filter(([, v]) => v.brand === 'chicken');
+  const cheesecakeItems = Object.entries(MENU_PREP_SPECS).filter(([, v]) => v.brand === 'cheesecake');
+
+  $('modalRoot').innerHTML = `
+    <div class="modal-backdrop" onclick="if(event.target===this)$('modalRoot').innerHTML=''">
+      <div class="modal-card" style="max-width:680px;max-height:88vh;overflow-y:auto">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;border-bottom:1.5px solid var(--border);padding-bottom:10px">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-size:22px">🍗</span>
+              <h3 style="margin:0;font-size:18px">Kitchen Preparation & Air Fryer Guide</h3>
+            </div>
+            <small style="color:var(--ink-muted)">Exact piece portions and air fryer cooking parameters (200°C Standard)</small>
+          </div>
+          <button class="chip" onclick="$('modalRoot').innerHTML=''" style="font-size:16px;padding:4px 10px">✕</button>
+        </div>
+
+        <div style="margin-bottom:18px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+            <h4 style="margin:0;color:var(--primary);font-size:14.5px">🍗 Guck mal! Fried Chicken & Sides (11 Menus)</h4>
+            <span class="badge badge-amber" style="font-size:11px">Air Fryer @ 200°C</span>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:8px">
+            ${chickenItems.map(([name, spec]) => `
+              <div style="background:var(--bg);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:10px;padding:10px 14px">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px">
+                  <b style="font-size:14px;color:var(--ink)">${esc(name.replace('Guck mal! ', ''))}</b>
+                  <div style="display:flex;gap:6px;align-items:center">
+                    <span class="badge badge-neutral" style="font-size:11px">⏱️ ${esc(spec.time)}</span>
+                    <span class="badge badge-amber" style="font-size:11px">🔥 ${esc(spec.temp)}</span>
+                  </div>
+                </div>
+                <div style="margin-top:5px;font-size:13px;display:flex;align-items:center;gap:6px">
+                  <span style="color:var(--ink-muted)">Portion / Pieces:</span>
+                  <span style="font-weight:700;color:var(--ink)">${esc(spec.pieces)}</span>
+                </div>
+                <div style="margin-top:3px;font-size:12px;color:var(--ink-muted);background:rgba(255,255,255,0.7);padding:4px 8px;border-radius:6px">
+                  💡 <b>วิธีทำ:</b> ${esc(spec.instruction)}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        ${cheesecakeItems.length ? `
+        <div>
+          <h4 style="margin:0 0 10px;color:var(--primary);font-size:14.5px">🧀 Kuu Kuu Cheesecake & Toppings</h4>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            ${cheesecakeItems.map(([name, spec]) => `
+              <div style="background:var(--bg);border:1px solid var(--border);border-left:4px solid var(--green);border-radius:10px;padding:10px 14px">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px">
+                  <b style="font-size:14px;color:var(--ink)">${esc(name)}</b>
+                  <span class="badge badge-green" style="font-size:11px">${esc(spec.temp)}</span>
+                </div>
+                <div style="margin-top:5px;font-size:13px">
+                  <span style="color:var(--ink-muted)">Portion:</span>
+                  <span style="font-weight:700;color:var(--ink)">${esc(spec.pieces)}</span>
+                </div>
+                <div style="margin-top:3px;font-size:12px;color:var(--ink-muted)">
+                  💡 <b>การเตรียม:</b> ${esc(spec.instruction)}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>` : ''}
+
+        <div style="margin-top:16px;text-align:right">
+          <button class="btn btn-outline" onclick="$('modalRoot').innerHTML=''">Close Guide</button>
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 function applyTheme() {
@@ -1231,13 +1453,15 @@ function vOrder() {
   const card = m => {
     const idx = S.menu.indexOf(m);
     const imgUrl = getMenuImg(m);
-    return `<div class="m-card" onclick="addCartItem(${idx})">
+    const prep = MENU_PREP_SPECS[m.name];
+    return `<div class="m-card" onclick="selectMenuItem(${idx})">
       <div class="m-img-wrap">
         ${imgUrl ? `<img src="${imgUrl}" alt="${esc(m.name)}" loading="lazy">` : `<div class="m-ph">${m.brand === 'chicken' ? '🍗' : '🧀'}</div>`}
         <span class="m-type-tag">${esc(m.type)}</span>
       </div>
       <div>
         <div class="m-title">${esc(m.name.replace('Guck mal! ', ''))}</div>
+        ${prep ? `<div style="font-size:11px;color:var(--ink-muted);margin:2px 0 4px;line-height:1.2">🍗 ${esc(prep.shortPortion)} · ⏱️ ${esc(prep.time)}</div>` : ''}
         <div class="m-price-row">
           <span class="m-price">฿${pf(m)}</span>
           <span class="m-add-icon">+</span>
@@ -1261,17 +1485,60 @@ function vOrder() {
     </div>` : '';
 
   $('app').innerHTML = `
+    <!-- STEP 1: SALES CHANNEL SELECTION FIRST -->
+    <div class="panel" style="margin-bottom:14px;padding:12px 16px;border:1.5px solid var(--border);border-left:4px solid ${ch ? 'var(--green)' : 'var(--primary)'};background:var(--card)">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#fff;background:${ch ? 'var(--green)' : 'var(--primary)'};padding:4px 9px;border-radius:6px">STEP 1</span>
+          <div>
+            <b style="font-size:14px">Select Sales Channel First</b>
+            <div style="font-size:12px;color:var(--ink-muted)">${ch ? `Active channel: <b>${esc(ch)}</b> (Pricing & GP auto-configured)` : '⚠️ Tap a channel below to begin ordering'}</div>
+          </div>
+        </div>
+        <div class="channel-btn-group" id="channelSelector" style="display:flex;gap:8px;flex-wrap:wrap">
+          ${CHN.map(c => {
+            const isSelected = matchCh(c, ch);
+            const icon = c === 'In-store' ? '🏪' : c === 'Grab' ? '🟢' : c === 'Lineman' ? '🛵' : '🟠';
+            const sub = c === 'In-store' ? 'หน้าร้าน (฿0 GP)' : c === 'Grab' ? 'GrabFood' : c === 'Lineman' ? 'LINE MAN' : 'ShopeeFood';
+            return `<button type="button" class="btn ${isSelected ? 'btn-primary' : 'btn-outline'}" 
+              style="padding:6px 12px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px;border-radius:10px;${isSelected ? 'box-shadow:0 3px 10px rgba(230,46,45,0.22);' : ''}"
+              onclick="setSalesChannel('${c}')">
+              <span>${icon}</span>
+              <span>${c}</span>
+              ${isSelected ? '<span style="font-size:11px;background:rgba(255,255,255,0.25);padding:1px 5px;border-radius:4px">✓ Active</span>' : ''}
+            </button>`;
+          }).join('')}
+        </div>
+      </div>
+    </div>
+
     <div class="pos-grid">
       <div>
         <div class="row" style="margin-bottom:12px;flex-wrap:wrap">
-          ${brandSwitcherHtml(brand)}
+          <div style="display:flex;align-items:center;gap:8px">
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#fff;background:${ch ? 'var(--accent)' : 'var(--ink-muted)'};padding:3px 8px;border-radius:6px">STEP 2</span>
+            ${brandSwitcherHtml(brand)}
+          </div>
           <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
             ${[['all', 'All'], ['single', 'Singles'], ['set', 'Sets'], ['addon', 'Add-ons']].map(([k, lbl]) =>
               `<button class="chip ${menuCatFilter === k ? 'primary-on' : ''}" onclick="menuCatFilter='${k}';vOrder()">${lbl}</button>`
             ).join('')}
-            ${brand === 'chicken' ? `<button class="btn btn-accent btn-sm" onclick="openCustomSet()">✨ + Custom Set</button>` : ''}
+            ${brand === 'chicken' ? `
+              <button class="btn btn-accent btn-sm" onclick="openCustomSet()">✨ + Custom Set</button>
+              <button class="btn btn-outline btn-sm" onclick="openPrepGuideModal()" title="View Air Fryer prep specs">📋 Prep Guide</button>
+            ` : ''}
           </div>
         </div>
+
+        ${!ch ? `
+          <div style="background:var(--accent-soft);border:1.5px dashed var(--accent);border-radius:12px;padding:12px 16px;margin-bottom:14px;display:flex;align-items:center;gap:10px">
+            <span style="font-size:20px">👆</span>
+            <div>
+              <b style="color:var(--ink)">Please select a sales channel in Step 1 above</b>
+              <div style="font-size:12px;color:var(--ink-muted)">Choose In-store, Grab, Lineman, or Shopee to activate menu selection and accurate channel pricing.</div>
+            </div>
+          </div>
+        ` : ''}
 
         <div style="margin-bottom:12px">
           <input type="search" placeholder="Search ${brand === 'chicken' ? 'chicken' : 'cheesecake'} menu…" value="${esc(menuSearch)}" oninput="menuSearch=this.value;vOrder()" style="width:100%;max-width:340px">
@@ -1293,13 +1560,13 @@ function vOrder() {
             </div>
             <div style="display:flex;gap:6px;align-items:center">
               ${editId ? `<button class="btn btn-outline btn-sm" onclick="discardEdit()">Discard</button>` : ''}
-              <select onchange="ch=this.value;vOrder()" style="font-weight:600">
-                ${CHN.map(c => `<option value="${c}" ${matchCh(c, ch) ? 'selected' : ''}>${c}</option>`).join('')}
-              </select>
+              <span class="badge ${ch ? (isInStore() ? 'badge-amber' : 'badge-green') : 'badge-red'}" style="font-size:12px;padding:4px 8px">
+                ${ch ? esc(ch) : 'Select Channel Above'}
+              </span>
             </div>
           </div>
 
-          ${cart.length ? t.L.map((x, i) => renderCartLine(x, i)).join('') : '<div style="text-align:center;padding:26px 10px;color:var(--ink-muted)">Tap any menu card on the left to build an order.</div>'}
+          ${cart.length ? t.L.map((x, i) => renderCartLine(x, i)).join('') : '<div style="text-align:center;padding:26px 10px;color:var(--ink-muted)">Select a channel (Step 1), tap a menu (Step 2), and pick sauces (Step 3).</div>'}
 
           <div style="border-top:1px solid var(--border);margin-top:10px;padding-top:10px;display:flex;flex-direction:column;gap:8px">
             <div class="row">
@@ -1368,11 +1635,223 @@ function renderCartLine(x, i) {
   </div>`;
 }
 
-function addCartItem(idx) {
+// ==================== WORKFLOW CONTROLS: STEP 1 (CHANNEL) -> STEP 2 (MENU) -> STEP 3 (SAUCE) ====================
+function setSalesChannel(channel) {
+  ch = channel;
+  vOrder();
+}
+
+function selectMenuItem(idx) {
+  if (!ch) {
+    toast('⚠️ Please select a sales channel in Step 1 first');
+    const el = $('channelSelector');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
   const m = S.menu[idx];
+  if (m.brand === 'chicken' && m.type !== 'addon') {
+    openSauceModal(idx);
+  } else {
+    addCartItemDirect(m, 1, []);
+  }
+}
+
+let sauceModalState = {
+  menuIdx: null,
+  qty: 1,
+  sauces: [],
+  isCustom: false,
+  customData: null
+};
+
+function openSauceModal(idx) {
+  sauceModalState = {
+    menuIdx: idx,
+    qty: 1,
+    sauces: [],
+    isCustom: false,
+    customData: null
+  };
+  renderSauceModal();
+}
+
+function renderSauceModal() {
+  const sState = sauceModalState;
+  const isCustom = sState.isCustom;
+  const m = isCustom ? sState.customData : S.menu[sState.menuIdx];
+  if (!m) return;
+  const prep = !isCustom ? MENU_PREP_SPECS[m.name] : null;
+
+  const basePrice = isCustom ? (isInStore() ? m.inn : (matchCh(ch, 'Shopee') ? m.sp : m.dl)) : pf(m);
+  const tartarPrice = isDel() ? (+S.set.tartar_dl || 15) : (+S.set.tartar_in || 10);
+  const extraPerItem = sState.sauces.includes('ทาร์ทาร์ซอส') ? tartarPrice : 0;
+  const itemPrice = basePrice + extraPerItem;
+  const totalPrice = itemPrice * sState.qty;
+
+  const sauceIcons = {
+    'ซอสมะเขือเทศ': '🍅',
+    'ซอสพริก': '🌶️',
+    'มายองเนส': '🥣',
+    'ทาร์ทาร์ซอส': '🥒'
+  };
+
+  $('modalRoot').innerHTML = `
+    <div class="modal-backdrop" onclick="if(event.target===this)closeSauceModal()">
+      <div class="modal-card" style="max-width:440px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+          <div>
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#fff;background:var(--accent);padding:3px 8px;border-radius:6px">STEP 3 · CHOOSE SAUCE</span>
+            <h3 style="margin:6px 0 2px;font-size:18px">${esc(m.name.replace('Guck mal! ', ''))}</h3>
+            <div style="font-size:12.5px;color:var(--ink-muted)">
+              Channel: <b>${esc(ch || 'In-store')}</b> · Base: <b>฿${f2(basePrice)}</b>
+            </div>
+          </div>
+          <button class="chip" onclick="closeSauceModal()" style="font-size:16px;padding:4px 9px">✕</button>
+        </div>
+
+        ${prep ? `
+        <div style="background:var(--accent-soft);border:1px solid rgba(240,168,48,0.35);border-radius:10px;padding:8px 12px;margin-bottom:12px;font-size:12px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">
+            <span style="font-weight:700;color:var(--ink)">🍗 Kitchen Prep Spec:</span>
+            <span class="badge badge-amber" style="font-size:11px">⏱️ ${esc(prep.temp)} · ${esc(prep.time)}</span>
+          </div>
+          <div style="color:var(--ink);font-weight:600">${esc(prep.pieces)}</div>
+          <div style="color:var(--ink-muted);font-size:11.5px;margin-top:2px">💡 ${esc(prep.instruction)}</div>
+        </div>` : ''}
+
+        <div style="background:var(--bg);padding:12px;border-radius:12px;margin-bottom:14px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <b style="font-size:13px">Select Sauces (Max 2):</b>
+            <span style="font-size:12px;color:var(--ink-muted)">${sState.sauces.length}/2 selected</span>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            ${SAUCES.map(s => {
+              const isChecked = sState.sauces.includes(s);
+              const isTartar = s === 'ทาร์ทาร์ซอส';
+              return `<button type="button" class="btn ${isChecked ? 'btn-primary' : 'btn-outline'}" 
+                style="padding:10px;text-align:left;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;border-radius:10px"
+                onclick="toggleModalSauce('${s}')">
+                <span>${sauceIcons[s] || '🥫'} ${s}</span>
+                <span style="font-size:11px;opacity:0.9">${isTartar ? `+฿${tartarPrice}` : 'Free'}</span>
+              </button>`;
+            }).join('')}
+          </div>
+
+          <div style="margin-top:8px;text-align:right">
+            <button type="button" class="chip ${sState.sauces.length === 0 ? 'on' : ''}" 
+              style="font-size:11.5px"
+              onclick="clearModalSauces()">
+              ❌ ไม่รับซอส (No Sauce)
+            </button>
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px">
+          <div style="display:flex;align-items:center;gap:8px">
+            <span style="font-size:13px;font-weight:600">Quantity:</span>
+            <div class="qty-box" style="background:#fff">
+              <button onclick="changeModalQty(-1)">−</button>
+              <span style="min-width:24px;text-align:center">${sState.qty}</span>
+              <button onclick="changeModalQty(1)">+</button>
+            </div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:12px;color:var(--ink-muted)">Item Total</div>
+            <div style="font-size:20px;font-weight:700;color:var(--primary)">฿${f2(totalPrice)}</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-outline" style="flex:1" onclick="closeSauceModal()">Cancel</button>
+          <button class="btn btn-primary" style="flex:2;padding:12px;font-size:14.5px" onclick="confirmAddSauceModal()">
+            Add to Order · ฿${f2(totalPrice)}
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function toggleModalSauce(s) {
+  const arr = sauceModalState.sauces;
+  const idx = arr.indexOf(s);
+  if (idx >= 0) {
+    arr.splice(idx, 1);
+  } else if (arr.length < 2) {
+    arr.push(s);
+  } else {
+    toast('Maximum 2 sauces per item');
+    return;
+  }
+  renderSauceModal();
+}
+
+function clearModalSauces() {
+  sauceModalState.sauces = [];
+  renderSauceModal();
+}
+
+function changeModalQty(delta) {
+  sauceModalState.qty = Math.max(1, sauceModalState.qty + delta);
+  renderSauceModal();
+}
+
+function closeSauceModal() {
+  $('modalRoot').innerHTML = '';
+}
+
+function confirmAddSauceModal() {
+  const sState = sauceModalState;
+  if (sState.isCustom) {
+    const c = sState.customData;
+    const template = S.menu.find(x => x.brand === 'chicken' && x.type === 'single');
+    cart.push({
+      brand: 'chicken',
+      name: 'Custom Set (' + c.names.join(', ') + ')',
+      type: 'custom',
+      inn: c.inn,
+      dl: c.dl,
+      sp: c.sp,
+      food: c.food,
+      pack: template ? template.pack : '',
+      steps: c.steps,
+      qty: sState.qty,
+      sauces: [...sState.sauces],
+      free: false,
+      ov: null
+    });
+    cust = null;
+    toast(`Added Custom Set (${sState.sauces.length ? sState.sauces.join(', ') : 'No Sauce'})`);
+  } else {
+    const m = S.menu[sState.menuIdx];
+    const saucesKey = [...sState.sauces].sort().join('+');
+    const existing = cart.find(l => l.name === m.name && l.brand === m.brand && [...l.sauces].sort().join('+') === saucesKey && !l.free && l.ov == null);
+    if (existing) {
+      existing.qty += sState.qty;
+    } else {
+      cart.push({
+        ...m,
+        qty: sState.qty,
+        sauces: [...sState.sauces],
+        free: false,
+        ov: null
+      });
+    }
+    toast(`Added ${m.name.replace('Guck mal! ', '')} (${sState.sauces.length ? sState.sauces.join(', ') : 'No Sauce'})`);
+  }
+  closeSauceModal();
+  vOrder();
+}
+
+function addCartItemDirect(m, qty = 1, sauces = []) {
   const existing = cart.find(l => l.name === m.name && l.brand === m.brand && !l.sauces.length && !l.free && l.ov == null);
-  if (existing) existing.qty++;
-  else cart.push({ ...m, qty: 1, sauces: [], free: false, ov: null });
+  if (existing) {
+    existing.qty += qty;
+  } else {
+    cart.push({ ...m, qty, sauces, free: false, ov: null });
+  }
+  toast(`Added ${m.name.replace('Guck mal! ', '')} to order`);
   vOrder();
 }
 
@@ -1393,16 +1872,35 @@ function toggleSauce(i, s) {
 }
 
 function renderTimeline() {
-  const L = cart.filter(l => l.brand === 'chicken').map(l => ({ l, s: getStepsInfo(l) })).filter(x => x.s);
+  const L = cart.filter(l => l.brand === 'chicken').map(l => {
+    const prep = MENU_PREP_SPECS[l.name];
+    return { l, s: getStepsInfo(l), prep };
+  }).filter(x => x.s || x.prep);
   if (!L.length) return '';
-  const tot = L.reduce((a, x) => a + x.s.tot * x.l.qty, 0) + (+S.set.preheat || 0);
+  const tot = L.reduce((a, x) => a + (x.s ? x.s.tot : 8) * x.l.qty, 0) + (+S.set.preheat || 3);
   return `<div class="panel">
     <div class="row">
-      <b>🔥 Air Fryer Prep Schedule · 200°C</b>
-      <span class="badge badge-amber">≈ ${tot} min total</span>
+      <b>🔥 Kitchen Air Fryer Schedule · 200°C</b>
+      <div style="display:flex;gap:6px;align-items:center">
+        <span class="badge badge-amber">≈ ${tot} min total</span>
+        <button class="btn btn-outline btn-sm" onclick="openPrepGuideModal()" style="font-size:11px;padding:2px 8px">📋 Full Guide</button>
+      </div>
     </div>
-    <div class="tl-step">Preheat air fryer: <b>${S.set.preheat} min</b></div>
-    ${L.map(x => `<div class="tl-step"><b>${esc(x.l.name.replace('Guck mal! ', ''))}</b> ×${x.l.qty} (${x.s.tot} min/batch)<br>${x.s.txt}</div>`).join('')}
+    <div class="tl-step">Preheat air fryer: <b>${S.set.preheat || 3} min</b> @ 200°C</div>
+    ${L.map(x => {
+      const p = x.prep;
+      const timeStr = p ? p.time : (x.s ? x.s.tot + ' min' : '');
+      const instruction = p ? p.instruction : (x.s ? x.s.txt : '');
+      const portionText = p ? p.pieces : '';
+      return `<div class="tl-step" style="border-left:3px solid var(--accent);padding-left:10px;margin-bottom:8px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <b>${esc(x.l.name.replace('Guck mal! ', ''))} ×${x.l.qty}</b>
+          <span style="font-size:11.5px;color:var(--accent);font-weight:600">⏱️ ${esc(timeStr)}</span>
+        </div>
+        ${portionText ? `<div style="font-size:12px;color:var(--ink);font-weight:500;margin-top:2px">🍗 วัตถุดิบ: <b>${esc(portionText)}</b> ${x.l.qty > 1 ? `(สำหรับ ${x.l.qty} ที่: ${x.l.qty} × ${esc(portionText)})` : ''}</div>` : ''}
+        ${instruction ? `<div style="font-size:11.5px;color:var(--ink-muted);margin-top:2px">💡 ${esc(instruction)}</div>` : ''}
+      </div>`;
+    }).join('')}
   </div>`;
 }
 
@@ -1416,6 +1914,7 @@ function discardEdit() {
 }
 
 async function checkout() {
+  if (!ch) return toast('⚠️ Please select a sales channel (Step 1) before saving the order');
   const t = calcCart();
   const wasEditing = !!editId;
   const id = editId || 'O' + Date.now().toString(36).toUpperCase();
@@ -1434,6 +1933,7 @@ async function checkout() {
     extra = 0;
     editId = null;
     editDate = null;
+    ch = null;
     toast(wasEditing ? `Order #${id} updated!` : `Order #${id} saved!`);
     S = await call('getState');
     draw();
@@ -1444,25 +1944,39 @@ async function checkout() {
 
 // Custom Set Builder
 function openCustomSet() {
+  if (!ch) return toast('⚠️ Please select a sales channel in Step 1 first');
   cust = {};
   const singles = S.menu.filter(m => m.brand === 'chicken' && m.type === 'single');
+  const d2 = r2(((S.set && S.set.bundle_2 != null) ? S.set.bundle_2 : 0.17) * 100);
+  const d3 = r2(((S.set && S.set.bundle_3 != null) ? S.set.bundle_3 : 0.15) * 100);
   $('custBox').innerHTML = `<div class="panel" style="border-color:var(--accent)">
     <div class="panel-header">
-      <h3 style="margin:0">✨ Build Custom Chicken Set (${r2((S.set.bundle || 0) * 100)}% Bundle Discount)</h3>
+      <div>
+        <h3 style="margin:0">✨ Build Custom Chicken Set</h3>
+        <small style="color:var(--ink-muted)">${d2}% off for 2 menus · ${d3}% off for 3+ menus · Ending in ฿9</small>
+      </div>
       <button class="chip" onclick="$('custBox').innerHTML=''">✕ Close</button>
     </div>
     ${singles.map(m => `<div class="row" style="padding:6px 0;border-bottom:1px solid var(--border)">
       <span>${esc(m.name.replace('Guck mal! ', ''))} <small style="color:var(--ink-muted)">(฿${m.inn} in-store / ฿${m.dl} delivery)</small></span>
       <input type="number" min="0" value="0" onchange="cust[${S.menu.indexOf(m)}]=Math.max(0,+this.value||0);updateCustSummary()">
     </div>`).join('')}
-    <div id="custSummary" style="margin:10px 0;font-size:13.5px;color:var(--ink-muted)">Select item quantities above.</div>
-    <button class="btn btn-primary" onclick="addCustomSet()">Add Custom Set to Order</button>
+    <div id="custSummary" style="margin:10px 0;font-size:13.5px;color:var(--ink-muted)">Select at least 2 items to apply bundle discount.</div>
+    <button class="btn btn-primary" onclick="addCustomSet()">Next: Select Sauce & Add to Order →</button>
   </div>`;
 }
 
 function calcCustomSet() {
   const ids = Object.keys(cust || {}).filter(k => cust[k] > 0);
-  const b = S.set.bundle || 0;
+  const totalQty = ids.reduce((acc, k) => acc + (cust[k] || 0), 0);
+  let b = 0;
+  if (totalQty === 2) {
+    b = (S.set && S.set.bundle_2 != null) ? +S.set.bundle_2 : 0.17;
+  } else if (totalQty >= 3) {
+    b = (S.set && S.set.bundle_3 != null) ? +S.set.bundle_3 : 0.15;
+  } else {
+    b = 0;
+  }
   let innSum = 0, dlSum = 0, spSum = 0, food = [], names = [], stepList = [];
   ids.forEach(k => {
     const m = S.menu[k];
@@ -1476,10 +1990,11 @@ function calcCustomSet() {
   });
   return {
     ids,
+    totalQty,
     innSum,
-    inn: roundTo9(innSum * (1 - b)),
-    dl: roundTo9(dlSum * (1 - b)),
-    sp: roundTo9(spSum * (1 - b)),
+    inn: totalQty >= 2 ? roundTo9(innSum * (1 - b)) : innSum,
+    dl: totalQty >= 2 ? roundTo9(dlSum * (1 - b)) : dlSum,
+    sp: totalQty >= 2 ? roundTo9(spSum * (1 - b)) : spSum,
     food: food.join(';'),
     steps: stepList.join(';'),
     names,
@@ -1489,32 +2004,34 @@ function calcCustomSet() {
 
 function updateCustSummary() {
   const c = calcCustomSet();
-  $('custSummary').innerHTML = c.ids.length
-    ? `Singles total ฿${c.innSum} − ${r2(c.b * 100)}% bundle = <b>฿${c.inn}</b> In-store · <b>฿${c.dl}</b> Delivery`
-    : 'Select item quantities above.';
+  if (!c.ids.length) {
+    $('custSummary').innerHTML = 'Select at least 2 items to apply bundle discount.';
+    return;
+  }
+  if (c.totalQty < 2) {
+    $('custSummary').innerHTML = `1 item selected (฿${c.innSum}). <span style="color:var(--accent);font-weight:600">Add 1 more item for 17% bundle discount!</span>`;
+    return;
+  }
+  const tierText = c.totalQty === 2 ? '2 items bundle (-17%)' : `${c.totalQty} items bundle (-15%)`;
+  $('custSummary').innerHTML = `Singles total ฿${c.innSum} − ${tierText} = <b style="color:var(--primary)">฿${c.inn}</b> In-store · <b style="color:var(--primary)">฿${c.dl}</b> Delivery <span class="badge badge-green">Ends in 9</span>`;
 }
 
 function addCustomSet() {
+  if (!ch) return toast('⚠️ Please select a sales channel in Step 1 first');
   const c = calcCustomSet();
-  if (!c.ids.length) return toast('Pick at least 1 item for the custom set');
-  const template = S.menu.find(x => x.brand === 'chicken' && x.type === 'single');
-  cart.push({
-    brand: 'chicken',
-    name: 'Custom Set (' + c.names.join(', ') + ')',
-    type: 'custom',
-    inn: c.inn,
-    dl: c.dl,
-    sp: c.sp,
-    food: c.food,
-    pack: template ? template.pack : '',
-    steps: c.steps,
+  if (c.totalQty < 2) return toast('Select at least 2 items to build a custom bundle set');
+  sauceModalState = {
+    menuIdx: null,
     qty: 1,
     sauces: [],
-    free: false,
-    ov: null
-  });
-  cust = null;
-  vOrder();
+    isCustom: true,
+    customData: {
+      ...c,
+      name: 'Custom Set (' + c.names.join(', ') + ')'
+    }
+  };
+  $('custBox').innerHTML = '';
+  renderSauceModal();
 }
 
 // ==================== 2. ORDERS HISTORY (EDIT & CANCEL POST-SUBMISSION) ====================
@@ -1754,6 +2271,7 @@ function vDash() {
     const cumProfit = (S.set['open_profit_' + b] || 0) + a.p;
     const pct = invTotal > 0 ? Math.min(100, (cumNet / invTotal) * 100) : 0;
     const remaining = Math.max(0, invTotal - cumNet);
+    const profitOverInv = cumNet - invTotal;
 
     return `<div class="panel">
       <div class="row">
@@ -1769,6 +2287,12 @@ function vDash() {
       <div class="row" style="font-size:12.5px;color:var(--ink-muted);flex-wrap:wrap">
         <span>Cumulative Net Sales: <b style="color:var(--ink)">฿${f2(cumNet)}</b></span>
         <span>Cumulative Net Profit: <b class="${cumProfit < 0 ? 'neg' : 'pos'}">฿${f2(cumProfit)}</b></span>
+      </div>
+      <div class="row" style="font-size:12.5px;margin-top:6px;padding-top:6px;border-top:1px dashed var(--border);flex-wrap:wrap">
+        <span>Profit (Total Sales − Total Investment):</span>
+        <b class="${profitOverInv < 0 ? 'neg' : 'pos'}" style="font-size:13px">
+          ${profitOverInv < 0 ? '−' : '+'}฿${f2(Math.abs(profitOverInv))}
+        </b>
       </div>
     </div>`;
   };
@@ -1791,6 +2315,94 @@ function vDash() {
   const freeRows = rows.filter(x => x[8] === 'FREE');
   const freeQty = freeRows.reduce((a, x) => a + (+x[5] || 0), 0);
   const freeCost = freeRows.reduce((a, x) => a + (+x[14] || 0), 0);
+
+  // Overall investment and cumulative sales calculation (Total Sales - Total Investment)
+  const getBrandInv = b => (S.set['inv_' + b] || 0) + S.inv.filter(x => x[3] === b).reduce((acc, x) => acc + (+x[2] || 0), 0);
+  const getBrandCumSales = b => (S.set['open_net_' + b] || 0) + S.sales.filter(x => x[2] === b).reduce((acc, x) => acc + (+x[13] || 0), 0);
+  const totalInv = dashBrand === 'all' ? (getBrandInv('chicken') + getBrandInv('cheesecake')) : getBrandInv(dashBrand);
+  const cumSales = dashBrand === 'all' ? (getBrandCumSales('chicken') + getBrandCumSales('cheesecake')) : getBrandCumSales(dashBrand);
+  const profitAfterInv = cumSales - totalInv;
+
+  // Day of Week & Time of Day volume analysis
+  const orderMap = {};
+  rows.forEach(x => {
+    const oId = x[1];
+    if (!orderMap[oId]) {
+      const dt = parseOrderDateTime(x[0]);
+      orderMap[oId] = { id: oId, dateStr: String(x[0]), dt, brand: x[2], channel: x[6], net: 0, profit: 0, itemsCount: 0 };
+    }
+    orderMap[oId].net += (+x[13] || 0);
+    orderMap[oId].profit += (+x[15] || 0);
+    orderMap[oId].itemsCount += (+x[5] || 0);
+  });
+  const uniqueOrders = Object.values(orderMap);
+
+  const DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const DAY_SHORT = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const dayStats = Array(7).fill(0).map((_, i) => ({ day: DAY_NAMES[i], short: DAY_SHORT[i], orders: 0, items: 0, net: 0, profit: 0 }));
+
+  uniqueOrders.forEach(o => {
+    if (o.dt && o.dt.dayOfWeek != null) {
+      const d = o.dt.dayOfWeek;
+      dayStats[d].orders++;
+      dayStats[d].items += o.itemsCount;
+      dayStats[d].net += o.net;
+      dayStats[d].profit += o.profit;
+    }
+  });
+
+  let peakDay = null, slowDay = null;
+  let maxDayOrders = -1, minDayOrders = Infinity;
+  dayStats.forEach(d => {
+    if (d.orders > maxDayOrders) { maxDayOrders = d.orders; peakDay = d; }
+    if (d.orders < minDayOrders) { minDayOrders = d.orders; slowDay = d; }
+  });
+  if (maxDayOrders <= 0) { peakDay = null; slowDay = null; }
+
+  const hourStats = Array(24).fill(0).map((_, i) => ({
+    hour: i,
+    label: `${String(i).padStart(2, '0')}:00`,
+    orders: 0,
+    items: 0,
+    net: 0
+  }));
+
+  uniqueOrders.forEach(o => {
+    if (o.dt && o.dt.hour != null) {
+      const h = o.dt.hour;
+      hourStats[h].orders++;
+      hourStats[h].items += o.itemsCount;
+      hourStats[h].net += o.net;
+    }
+  });
+
+  const activeHours = hourStats.filter(h => h.hour >= 9 && h.hour <= 22);
+  let peakHr = null, slowHr = null;
+  let maxHrOrders = -1, minHrOrders = Infinity;
+  activeHours.forEach(h => {
+    if (h.orders > maxHrOrders) { maxHrOrders = h.orders; peakHr = h; }
+    if (h.orders < minHrOrders) { minHrOrders = h.orders; slowHr = h; }
+  });
+  if (maxHrOrders <= 0) { peakHr = null; slowHr = null; }
+
+  const shifts = [
+    { key: 'morning', name: '🌅 Morning (08–11)', hours: [8, 9, 10, 11], orders: 0, net: 0 },
+    { key: 'lunch', name: '🍱 Lunch Rush (12–14)', hours: [12, 13, 14], orders: 0, net: 0 },
+    { key: 'afternoon', name: '☕ Afternoon (15–17)', hours: [15, 16, 17], orders: 0, net: 0 },
+    { key: 'evening', name: '🌙 Evening Rush (18–21)', hours: [18, 19, 20, 21], orders: 0, net: 0 },
+    { key: 'night', name: '🦉 Late Night (22+)', hours: [22, 23, 0, 1, 2, 3, 4, 5, 6, 7], orders: 0, net: 0 }
+  ];
+
+  uniqueOrders.forEach(o => {
+    if (o.dt && o.dt.hour != null) {
+      const h = o.dt.hour;
+      const sh = shifts.find(s => s.hours.includes(h));
+      if (sh) {
+        sh.orders++;
+        sh.net += o.net;
+      }
+    }
+  });
 
   $('app').innerHTML = `
     <div class="row" style="margin-bottom:14px;flex-wrap:wrap">
@@ -1829,9 +2441,14 @@ function vDash() {
         <div class="kpi-sub">Cost Ratio: <b>${kpi.n > 0 ? r2((kpi.c / kpi.n) * 100) : 0}%</b> of net</div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-top"><span class="kpi-label">Net Profit</span><span class="kpi-icon">📈</span></div>
+        <div class="kpi-top"><span class="kpi-label">Operational Net Profit</span><span class="kpi-icon">📈</span></div>
         <div class="kpi-val ${kpi.p < 0 ? 'neg' : 'pos'}">฿${f2(kpi.p)}</div>
         <div class="kpi-sub">Net Margin: <span class="badge ${kpi.p < 0 ? 'badge-red' : 'badge-green'}">${r2(kpi.margin)}%</span></div>
+      </div>
+      <div class="kpi-card" style="border-left:4px solid var(--accent)">
+        <div class="kpi-top"><span class="kpi-label">Profit (Sales − Inv)</span><span class="kpi-icon">⚖️</span></div>
+        <div class="kpi-val ${profitAfterInv < 0 ? 'neg' : 'pos'}">${profitAfterInv < 0 ? '−' : '+'}฿${f2(Math.abs(profitAfterInv))}</div>
+        <div class="kpi-sub">Total Sales <b>฿${f2(cumSales)}</b> − Inv <b>฿${f2(totalInv)}</b></div>
       </div>
     </div>
 
@@ -1872,7 +2489,55 @@ function vDash() {
     <div class="two-col">
       <div class="panel">
         <div class="panel-header">
-          <h3 style="margin:0">🏆 Best-Selling Menu Items</h3>
+          <div>
+            <h3 style="margin:0">📅 Order Volume by Day of Week</h3>
+            <small style="color:var(--ink-muted)">Identifies peak vs. slowest sales days (Sun–Sat)</small>
+          </div>
+          <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+            ${peakDay && peakDay.orders > 0 ? `<span class="badge badge-green" style="font-size:11px">🔥 Peak: <b>${peakDay.short}</b> (${peakDay.orders} ord)</span>` : ''}
+            ${slowDay && peakDay && slowDay.day !== peakDay.day ? `<span class="badge badge-neutral" style="font-size:11px">💤 Slowest: <b>${slowDay.short}</b> (${slowDay.orders} ord)</span>` : ''}
+          </div>
+        </div>
+        <div class="chart-wrap" style="height:210px" id="dayChartBox"><canvas id="dayChart"></canvas></div>
+        <div style="display:grid;grid-template-columns:repeat(7, 1fr);gap:4px;margin-top:10px;text-align:center;font-size:11px">
+          ${dayStats.map(d => {
+            const isPeak = peakDay && peakDay.orders > 0 && d.day === peakDay.day;
+            return `<div style="padding:6px 2px;border-radius:8px;background:${isPeak ? 'var(--primary-soft)' : 'var(--bg)'};border:1px solid ${isPeak ? 'var(--primary)' : 'var(--border)'}">
+              <b style="color:${isPeak ? 'var(--primary)' : 'var(--ink)'}">${d.short}</b>
+              <div style="font-size:13px;font-weight:700;margin:2px 0">${d.orders}</div>
+              <div style="color:var(--ink-muted);font-size:9.5px">฿${f0(d.net)}</div>
+            </div>`;
+          }).join('')}
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <h3 style="margin:0">⏰ Order Volume by Time of Day</h3>
+            <small style="color:var(--ink-muted)">Rush hours & operating shift breakdown (09:00–22:00)</small>
+          </div>
+          <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+            ${peakHr && peakHr.orders > 0 ? `<span class="badge badge-green" style="font-size:11px">🔥 Rush: <b>${peakHr.label}</b> (${peakHr.orders} ord)</span>` : ''}
+            ${slowHr && peakHr && slowHr.orders < peakHr.orders ? `<span class="badge badge-neutral" style="font-size:11px">☕ Quiet: <b>${slowHr.label}</b> (${slowHr.orders} ord)</span>` : ''}
+          </div>
+        </div>
+        <div class="chart-wrap" style="height:210px" id="hourChartBox"><canvas id="hourChart"></canvas></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(110px, 1fr));gap:6px;margin-top:10px">
+          ${shifts.filter(s => s.orders > 0 || s.key !== 'night').map(s => `
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:6px 8px;font-size:11px">
+              <div style="font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${s.name}</div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:2px">
+                <b style="font-size:13px;color:var(--primary)">${s.orders} <small style="font-size:9.5px;font-weight:400;color:var(--ink-muted)">ord</small></b>
+                <span style="color:var(--ink-muted);font-size:10px">฿${f0(s.net)}</span>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col">
           <small style="color:var(--ink-muted)">By units sold</small>
         </div>
         ${topItems.length ? `<div class="chart-wrap" style="height:220px" id="topChartBox"><canvas id="topChart"></canvas></div>` : '<div style="padding:20px;color:var(--ink-muted);text-align:center">No sales recorded in this period yet.</div>'}
@@ -1899,10 +2564,10 @@ function vDash() {
     </div>
   `;
 
-  renderDashboardCharts(rows, chData, topItems);
+  renderDashboardCharts(rows, chData, topItems, dayStats, activeHours, peakDay, peakHr);
 }
 
-function renderDashboardCharts(rows, chData, topItems) {
+function renderDashboardCharts(rows, chData, topItems, dayStats = [], activeHours = [], peakDay = null, peakHr = null) {
   Object.values(charts).forEach(c => { try { c.destroy(); } catch (e) {} });
   charts = {};
 
@@ -1922,6 +2587,8 @@ function renderDashboardCharts(rows, chData, topItems) {
     $('trendChartBox').innerHTML = days.length ? renderSvgBarFallback(days.map(d => ({ label: d.slice(5), val: dailyMap[d].net }))) : '<div style="padding:30px;text-align:center;color:var(--ink-muted)">No sales data yet</div>';
     $('channelChartBox').innerHTML = '<div style="padding:20px;text-align:center;font-size:12px;color:var(--ink-muted)">Channel breakdown shown on right</div>';
     if ($('topChartBox')) $('topChartBox').innerHTML = renderSvgBarFallback(topItems.map(([n, v]) => ({ label: n.slice(0, 14), val: v.qty })));
+    if ($('dayChartBox')) $('dayChartBox').innerHTML = renderSvgBarFallback(dayStats.map(d => ({ label: d.short, val: d.orders })));
+    if ($('hourChartBox')) $('hourChartBox').innerHTML = renderSvgBarFallback(activeHours.map(h => ({ label: h.label, val: h.orders })));
     return;
   }
 
@@ -2000,6 +2667,50 @@ function renderDashboardCharts(rows, chData, topItems) {
         maintainAspectRatio: false,
         plugins: { legend: { display: false } },
         scales: { x: { beginAtZero: true } }
+      }
+    });
+  }
+
+  // 4. Day of Week Chart
+  if ($('dayChart') && dayStats.length) {
+    charts.day = new Chart($('dayChart'), {
+      type: 'bar',
+      data: {
+        labels: dayStats.map(d => d.short),
+        datasets: [{
+          label: 'Orders',
+          data: dayStats.map(d => d.orders),
+          backgroundColor: dayStats.map(d => (peakDay && d.day === peakDay.day && d.orders > 0) ? '#E62E2D' : 'rgba(230, 46, 45, 0.45)'),
+          borderRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, ticks: { precision: 0 } } }
+      }
+    });
+  }
+
+  // 5. Hour / Time Period Chart
+  if ($('hourChart') && activeHours.length) {
+    charts.hour = new Chart($('hourChart'), {
+      type: 'bar',
+      data: {
+        labels: activeHours.map(h => h.label),
+        datasets: [{
+          label: 'Orders',
+          data: activeHours.map(h => h.orders),
+          backgroundColor: activeHours.map(h => (peakHr && h.hour === peakHr.hour && h.orders > 0) ? '#16A34A' : 'rgba(245, 166, 35, 0.75)'),
+          borderRadius: 5
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, ticks: { precision: 0 } } }
       }
     });
   }
@@ -2235,8 +2946,11 @@ function vMenu() {
     <!-- SECTION A: BRAND MENU PRICING & MARGIN TABLE -->
     <div class="panel" style="overflow-x:auto">
       <div class="panel-header">
-        <h3 style="margin:0">${meta.icon} ${meta.name} — Menu & Profit Margins (${brandMenus.length} items)</h3>
-        <small style="color:var(--ink-muted)">Prices auto-save on change · Leave Shopee blank to inherit Grab/LM price</small>
+        <div>
+          <h3 style="margin:0">${meta.icon} ${meta.name} — Menu & Profit Margins (${brandMenus.length} items)</h3>
+          <small style="color:var(--ink-muted)">Prices auto-save on change · Leave Shopee blank to inherit Grab/LM price</small>
+        </div>
+        <button class="btn btn-outline btn-sm" onclick="openPrepGuideModal()">📋 Kitchen Prep Guide</button>
       </div>
       <table class="data-table">
         <tr>
@@ -2272,6 +2986,7 @@ function vMenu() {
                     <span class="badge badge-neutral" style="font-size:10px">${esc(m.type)}</span>
                     ${m.steps ? ` · 🔥 ${esc(m.steps)}` : ''}
                   </div>
+                  ${MENU_PREP_SPECS[m.name] ? `<div style="font-size:11px;color:var(--accent);font-weight:600;margin-top:2px">🍗 ${esc(MENU_PREP_SPECS[m.name].pieces)} · ⏱️ ${esc(MENU_PREP_SPECS[m.name].temp)} ${esc(MENU_PREP_SPECS[m.name].time)}</div>` : ''}
                 </div>
               </div>
             </td>
@@ -2673,9 +3388,23 @@ const SETTING_GROUPS = [
         isPct: true
       },
       {
+        key: 'bundle_2',
+        title: 'Chicken Custom Set — 2 Menus Discount (%)',
+        desc: 'Discount applied when 2 single chicken menus are bundled into a custom set (e.g. 17%). Applies only to chicken.',
+        unit: '%',
+        isPct: true
+      },
+      {
+        key: 'bundle_3',
+        title: 'Chicken Custom Set — 3+ Menus Discount (%)',
+        desc: 'Discount applied when 3 or more single chicken menus are bundled into a custom set (e.g. 15%). Applies only to chicken.',
+        unit: '%',
+        isPct: true
+      },
+      {
         key: 'bundle',
-        title: 'Custom Set Bundle Discount (%)',
-        desc: 'Automatic discount given when combining single items into a Custom Set (e.g. 25%)',
+        title: 'Custom Set Bundle Fallback Discount (%)',
+        desc: 'Fallback discount for custom bundle sets (e.g. 17%)',
         unit: '%',
         isPct: true
       },

@@ -9,7 +9,9 @@ const SH = ['Date', 'Order', 'Brand', 'Item', 'Sauces', 'Qty', 'Channel', 'UnitP
 const CH_CANCEL = ['CancelledAt', 'Reason'].concat(SH);
 const DEF = {
   gp: 0.321,
-  bundle: 0.25,
+  bundle: 0.17,
+  bundle_2: 0.17,
+  bundle_3: 0.15,
   tartar_in: 10,
   tartar_dl: 15,
   preheat: 3,
@@ -132,6 +134,20 @@ function ensure_() {
   if (s.getLastRow() < 2) {
     const r = Object.entries(DEF);
     s.getRange(2, 1, r.length, 2).setValues(r);
+  } else {
+    // Auto-sync any missing keys from DEF into POS_Settings
+    const d = s.getDataRange().getValues();
+    const existing = {};
+    for (let i = 1; i < d.length; i++) {
+      if (d[i][0]) existing[d[i][0]] = true;
+    }
+    const toAppend = [];
+    Object.keys(DEF).forEach(k => {
+      if (!existing[k]) toAppend.push([k, DEF[k]]);
+    });
+    if (toAppend.length) {
+      s.getRange(s.getLastRow() + 1, 1, toAppend.length, 2).setValues(toAppend);
+    }
   }
 }
 
