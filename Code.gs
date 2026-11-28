@@ -24,8 +24,21 @@ const DEF = {
   open_profit_cheesecake: 863.14
 };
 
+const _ssCache = {};
+function ss_(b) {
+  if (!_ssCache[b]) {
+    _ssCache[b] = SpreadsheetApp.openById(IDS[b]);
+  }
+  return _ssCache[b];
+}
+
 const dt_ = (v, b) => v instanceof Date ? Utilities.formatDate(v, ss_(b).getSpreadsheetTimeZone(), 'yyyy-MM-dd HH:mm:ss') : v;
-const ss_ = b => SpreadsheetApp.openById(IDS[b]);
+
+function clearCache_() {
+  try {
+    CacheService.getScriptCache().remove('pos_state');
+  } catch (e) {}
+}
 
 // ---------- Input validation helpers ----------
 function requireBrand_(b) {
@@ -59,10 +72,22 @@ function doGet(e) {
     return ContentService.createTextOutput(JSON.stringify(getState()))
       .setMimeType(ContentService.MimeType.JSON);
   }
-  return HtmlService.createHtmlOutputFromFile('index')
-    .setTitle('Guck mal! & Kuu Kuu POS')
-    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
-    .addMetaTag('viewport', 'width=device-width,initial-scale=1');
+  try {
+    return HtmlService.createTemplateFromFile('index')
+      .evaluate()
+      .setTitle('Guck mal! & Kuu Kuu POS')
+      .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
+      .addMetaTag('viewport', 'width=device-width,initial-scale=1');
+  } catch (err) {
+    return HtmlService.createHtmlOutputFromFile('index')
+      .setTitle('Guck mal! & Kuu Kuu POS')
+      .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
+      .addMetaTag('viewport', 'width=device-width,initial-scale=1');
+  }
+}
+
+function include(filename) {
+  return HtmlService.createHtmlOutputFromFile(filename).getContent();
 }
 
 // Whitelist of functions the frontend is allowed to call via doPost.
@@ -240,27 +265,37 @@ function cleanSales_(b) {
 }
 
 function getState() {
-  ensure_();
+  const cache = CacheService.getScriptCache();
+  try {
+    const cached = cache.get('pos_state');
+    if (cached) return JSON.parse(cached);
+  } catch (e) {}
+
   const o = { menu: [], ing: {}, sales: [], set: {}, inv: [], cancelled: [] };
   CH.forEach(b => {
     const s = ss_(b);
-    s.getSheetByName('POS_Menu').getDataRange().getValues().slice(1).forEach((r, i) => {
-      if (r[0]) {
-        o.menu.push({
-          brand: b,
-          row: i + 2,
-          name: r[0],
-          type: r[1],
-          inn: +r[2],
-          dl: +r[3],
-          img: r[4],
-          food: r[5],
-          pack: r[6],
-          steps: r[7],
-          sp: +r[8] || 0
-        });
-      }
-    });
+
+    const mSheet = s.getSheetByName('POS_Menu');
+    if (mSheet) {
+      mSheet.getDataRange().getValues().slice(1).forEach((r, i) => {
+        if (r[0]) {
+          o.menu.push({
+            brand: b,
+            row: i + 2,
+            name: r[0],
+            type: r[1],
+            inn: +r[2],
+            dl: +r[3],
+            img: r[4],
+            food: r[5],
+            pack: r[6],
+            steps: r[7],
+            sp: +r[8] || 0
+          });
+        }
+      });
+    }
+
     const costSheet = s.getSheetByName('Cost');
     if (costSheet) {
       costSheet.getDataRange().getValues().slice(1).forEach((r, i) => {
@@ -276,15 +311,24 @@ function getState() {
         }
       });
     }
-    s.getSheetByName('POS_Sales').getDataRange().getValues().slice(1).forEach(r => {
-      if (r[1]) {
-        r[0] = dt_(r[0], b);
-        o.sales.push(r);
-      }
-    });
-    s.getSheetByName('POS_Investments').getDataRange().getValues().slice(1).forEach((r, i) => {
-      if (r[2] !== '') o.inv.push([dt_(r[0], b), r[1], +r[2], b, i + 2]);
-    });
+
+    const salesSheet = s.getSheetByName('POS_Sales');
+    if (salesSheet) {
+      salesSheet.getDataRange().getValues().slice(1).forEach(r => {
+        if (r[1]) {
+          r[0] = dt_(r[0], b);
+          o.sales.push(r);
+        }
+      });
+    }
+
+    const invSheet = s.getSheetByName('POS_Investments');
+    if (invSheet) {
+      invSheet.getDataRange().getValues().slice(1).forEach((r, i) => {
+        if (r[2] !== '') o.inv.push([dt_(r[0], b), r[1], +r[2], b, i + 2]);
+      });
+    }
+
     const cSheet = s.getSheetByName('POS_Cancelled');
     if (cSheet) {
       cSheet.getDataRange().getValues().slice(1).forEach(r => {
@@ -296,9 +340,21 @@ function getState() {
       });
     }
   });
-  tab_('chicken', 'POS_Settings').getDataRange().getValues().slice(1).forEach(r => {
-    if (r[0]) o.set[r[0]] = +r[1];
-  });
+
+  const setSheet = ss_('chicken').getSheetByName('POS_Settings');
+  if (setSheet) {
+    setSheet.getDataRange().getValues().slice(1).forEach(r => {
+      if (r[0]) o.set[r[0]] = +r[1];
+    });
+  }
+
+  try {
+    const jsonStr = JSON.stringify(o);
+    if (jsonStr.length < 95000) {
+      cache.put('pos_state', jsonStr, 300); // Cache for 5 min (invalidated on write)
+    }
+  } catch (e) {}
+
   return o;
 }
 
@@ -313,6 +369,7 @@ function saveOrder(rows) {
       t.getRange(n, 1, mine.length, SH.length).setValues(mine);
     }
   });
+  clearCache_();
   return true;
 }
 
@@ -326,6 +383,7 @@ function deleteOrder(id) {
       if (d[i][1] === id) t.deleteRow(i + 1);
     }
   });
+  clearCache_();
   return true;
 }
 
@@ -394,6 +452,7 @@ function cancelOrder(id, reason) {
       cTab.getRange(n, 1, toArchive.length, CH_CANCEL.length).setValues(toArchive);
     }
   });
+  clearCache_();
   return true;
 }
 
@@ -417,6 +476,7 @@ function restoreOrder(id) {
       sTab.getRange(n, 1, toRestore.length, SH.length).setValues(toRestore);
     }
   });
+  clearCache_();
   return true;
 }
 
@@ -440,6 +500,7 @@ function saveIng(brand, name, price) {
     const c = t.getRange(r, 5);
     if (!c.getFormula()) c.setValue((+price) / (t.getRange(r, 3).getValue() || 1));
   }
+  clearCache_();
   return true;
 }
 
@@ -451,6 +512,7 @@ function addIng(brand, name, price, batch, unit) {
   if (!t) return false;
   const bQty = +batch || 1;
   t.appendRow([name, +price, bQty, unit || 'unit', (+price) / bQty]);
+  clearCache_();
   return true;
 }
 
@@ -461,6 +523,7 @@ function saveSet(key, val) {
   const i = d.findIndex(x => x[0] === key);
   if (i < 0) t.appendRow([key, val]);
   else t.getRange(i + 1, 2).setValue(val);
+  clearCache_();
   return true;
 }
 
@@ -479,6 +542,7 @@ function addMenu(brand, row, img) {
   }
   while (row.length < MH.length) row.push('');
   tab_(brand, 'POS_Menu', MH).appendRow(row.slice(0, MH.length));
+  clearCache_();
   return true;
 }
 
@@ -492,6 +556,7 @@ function updateMenu(brand, rowIdx, row, img) {
   }
   while (row.length < MH.length) row.push('');
   t.getRange(+rowIdx, 1, 1, MH.length).setValues([row.slice(0, MH.length)]);
+  clearCache_();
   return true;
 }
 
@@ -503,6 +568,7 @@ function addInvest(brand, date, item, amount) {
   const n = t.getLastRow() + 1;
   t.getRange(n, 1).setNumberFormat('@');
   t.getRange(n, 1, 1, 3).setValues([[date, item, +amount]]);
+  clearCache_();
   return true;
 }
 
@@ -510,6 +576,7 @@ function delInvest(brand, row) {
   requireBrand_(brand);
   requirePositiveInt_(+row, 'Row index');
   ss_(brand).getSheetByName('POS_Investments').deleteRow(+row);
+  clearCache_();
   return true;
 }
 
@@ -519,5 +586,6 @@ function savePrice(brand, row, col, val) {
   requirePositiveInt_(+col, 'Column index');
   requireNumber_(+val, 'Price value');
   ss_(brand).getSheetByName('POS_Menu').getRange(+row, +col).setValue(+val);
+  clearCache_();
   return true;
 }
